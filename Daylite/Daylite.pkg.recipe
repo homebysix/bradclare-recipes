@@ -8,8 +8,6 @@
 	<string>com.github.bradclare.pkg.daylite</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://www.marketcircle.com/downloads/latest-daylite</string>
 		<key>NAME</key>
 		<string>Daylite</string>
 	</dict>

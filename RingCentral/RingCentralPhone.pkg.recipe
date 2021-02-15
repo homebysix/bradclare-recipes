@@ -12,8 +12,6 @@
     <dict>
         <key>NAME</key>
         <string>RingCentral Phone</string>
-        <key>DOWNLOAD_URL</key>
-        <string>https://downloads.ringcentral.com/sp/RingCentralForMac</string>
     </dict>
     <key>ParentRecipe</key>
     <string>com.github.bradclare.download.ringcentralphone</string>

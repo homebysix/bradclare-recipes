@@ -12,8 +12,6 @@
     <dict>
         <key>NAME</key>
         <string>RingCentral</string>
-        <key>DOWNLOAD_URL</key>
-        <string>https://app.ringcentral.com/download/RingCentral.pkg</string>
     </dict>
     <key>ParentRecipe</key>
     <string>com.github.bradclare.download.ringcentral</string>
