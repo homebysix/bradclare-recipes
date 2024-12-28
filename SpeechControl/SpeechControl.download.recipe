@@ -10,8 +10,6 @@
 	<string>com.github.bradclare.download.SpeechControl</string>
 	<key>Input</key>
 	<dict>
-		<key>DOWNLOAD_URL</key>
-		<string>https://cdn.speech.com/fileadmin/Support/software/speechcontrol/speechcontrol4mac_swm_3.5.11.dmg</string>
 		<key>NAME</key>
 		<string>SpeechControl</string>
 	</dict>
@@ -22,10 +20,23 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>filename</key>
-				<string>%NAME%.dmg</string>
+				<key>re_pattern</key>
+				<string>&lt;p&gt;([\d\.]+) - macOS&lt;/p&gt;</string>
+				<key>result_output_var_name</key>
+				<string>version</string>
 				<key>url</key>
-				<string>%DOWNLOAD_URL%</string>
+				<string>https://www.dictation.philips.com/us/products/workflow-software/speechcontrol-device-and-application-control-software-lfh4000/#productsupport</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLTextSearcher</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%-%version%.dmg</string>
+				<key>url</key>
+				<string>https://cdn.speech.com/fileadmin/Support/software/speechcontrol/speechcontrol4mac_swm_%version%.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -33,6 +44,17 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/SpeechControl.app</string>
+				<key>requirement</key>
+				<string>anchor apple generic and identifier "com.Philips.SpeechControl" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = DUQ8LK9P92)</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
 		</dict>
 	</array>
 </dict>
