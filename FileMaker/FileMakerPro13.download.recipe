@@ -14,9 +14,18 @@
         <string>https://fmdl.filemaker.com/TBUB/13/fmp_trial_fm_13.0.9.904.dmg</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>1.1</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Processor</key>
+            <string>DeprecationWarning</string>
+            <key>Arguments</key>
+            <dict>
+                <key>warning_message</key>
+                <string>FileMaker 13 is no longer supported (details: https://support.claris.com/s/article/FileMaker-announces-the-end-of-support-for-FileMaker-13-Platform-1503693097684). This recipe is deprecated and will be removed in the future.</string>
+            </dict>
+        </dict>
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
